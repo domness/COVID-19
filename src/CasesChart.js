@@ -1,14 +1,16 @@
 import React from 'react';
 import { useTheme } from '@material-ui/core';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import * as _ from 'lodash';
 
 function Chart({data}) {
   const theme = useTheme();
+  const chartData = _.reverse(data);
 
   return (
     <ResponsiveContainer>
       <LineChart
-        data={data}
+        data={chartData}
         margin={{
           top: 16,
           right: 16,

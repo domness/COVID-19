@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import { AppBar, Toolbar, Typography, Container, CssBaseline, makeStyles } from '@material-ui/core';
-import { Switch, Route } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, Container, CssBaseline, makeStyles, Button } from '@material-ui/core';
+import { Switch, Route, Link } from 'react-router-dom';
 import Cases from './Cases';
 import CasesRegion from './CasesRegion';
 import { AppContext } from './context';
@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
   toolbarTitle: {
     flexGrow: 1,
   },
+  link: {
+    margin: theme.spacing(1, 1.5),
+  },
 }));
 
 function App() {
@@ -28,9 +31,15 @@ function App() {
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-            Covid-19 UK
+            <Button component={Link} to="/" className={classes.link}>
+              COVID-19 UK
+            </Button>
           </Typography>
-          <nav></nav>
+          <nav>
+            <Button component={Link} to="/" className={classes.link} color="primary">
+              Home
+            </Button>
+          </nav>
         </Toolbar>
       </AppBar>
 
