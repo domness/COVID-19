@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/domness/COVID-19/compare/v0.1.1...v0.1.2) (2020-07-26)
+
+
+### Features
+
+* add procfile ([fad8c55](https://github.com/domness/COVID-19/commit/fad8c55bd57b16444b974796707ad11144c003b2))
+
 ### [0.1.1](https://github.com/domness/COVID-19/compare/v0.1.0...v0.1.1) (2020-07-26)
 
 
