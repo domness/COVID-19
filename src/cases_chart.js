@@ -3,7 +3,7 @@ import { useTheme } from '@material-ui/core';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import * as _ from 'lodash';
 
-function Chart({data}) {
+function CasesChart({ data }) {
   const theme = useTheme();
   const chartData = _.reverse(data);
 
@@ -34,4 +34,4 @@ function Chart({data}) {
   );
 }
 
-export default Chart;
+export default CasesChart;

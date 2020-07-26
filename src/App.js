@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { AppBar, Toolbar, Typography, Container, CssBaseline, makeStyles, Button } from '@material-ui/core';
 import { Switch, Route, Link } from 'react-router-dom';
 import Cases from './cases';
 import CasesRegion from './cases_region';
-import { AppContext } from './context';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -23,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  const [cases, setCases] = useState({});
 
   return (
     <div className="App">
@@ -43,18 +41,16 @@ function App() {
         </Toolbar>
       </AppBar>
 
-      <AppContext.Provider value={{ cases, setCases }}>
-        <Container component="main">
-          <Switch>
-            <Route path="/cases/:region">
-              <CasesRegion />
-            </Route>
-            <Route path="/">
-              <Cases />
-            </Route>
-          </Switch>
-        </Container>
-      </AppContext.Provider>
+      <Container component="main">
+        <Switch>
+          <Route path="/cases/:region">
+            <CasesRegion />
+          </Route>
+          <Route path="/">
+            <Cases />
+          </Route>
+        </Switch>
+      </Container>
     </div>
   );
 }
