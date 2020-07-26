@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { AppBar, Toolbar, Typography, Container, CssBaseline, makeStyles } from '@material-ui/core';
-import Cases from './cases';
+import { Switch, Route } from 'react-router-dom';
+import Cases from './Cases';
+import CasesRegion from './CasesRegion';
+import { AppContext } from './context';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -13,13 +16,11 @@ const useStyles = makeStyles((theme) => ({
   toolbarTitle: {
     flexGrow: 1,
   },
-  link: {
-    margin: theme.spacing(1, 1.5),
-  },
 }));
 
 function App() {
   const classes = useStyles();
+  const [cases, setCases] = useState({});
 
   return (
     <div className="App">
@@ -33,9 +34,18 @@ function App() {
         </Toolbar>
       </AppBar>
 
-      <Container component="main">
-        <Cases />
-      </Container>
+      <AppContext.Provider value={{ cases, setCases }}>
+        <Container component="main">
+          <Switch>
+            <Route path="/cases/:region">
+              <CasesRegion />
+            </Route>
+            <Route path="/">
+              <Cases />
+            </Route>
+          </Switch>
+        </Container>
+      </AppContext.Provider>
     </div>
   );
 }
