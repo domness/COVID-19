@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import { AppBar, Toolbar, Typography, Container, CssBaseline, makeStyles, Button } from '@material-ui/core';
 import { Switch, Route, Link } from 'react-router-dom';
-import Cases from './Cases';
-import CasesRegion from './CasesRegion';
+import Cases from './cases';
+import CasesRegion from './cases_region';
 import { AppContext } from './context';
 
 const useStyles = makeStyles((theme) => ({

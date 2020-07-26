@@ -4,8 +4,8 @@ import getCases from './services/get_cases';
 import * as _ from 'lodash';
 import { Paper, Container, Grid, makeStyles, Typography } from '@material-ui/core';
 import clsx from 'clsx';
-import CasesChart from './CasesChart';
-import CasesTable from './CasesTable';
+import CasesChart from './cases_chart';
+import CasesTable from './cases_table';
 
 const useStyles = makeStyles((theme) => ({
   container: {
